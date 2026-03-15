@@ -10,3 +10,9 @@ C:\Program Files\MATLAB\R2024b\extern\engines\python
 python setup.py install
 
 npm install in both backend and frontend
+
+
+POST /whisper/session/init
+POST /whisper/session/handshake
+POST /whisper/session/send
+POST /whisper/session/end
