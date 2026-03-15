@@ -1,0 +1,3 @@
+module.exports=[58935,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(12853);a.n(d("[project]/WhisperNet/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},81065,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(12853);a.n(d("[project]/WhisperNet/node_modules/next/dist/client/components/builtin/global-error.js"))},13945,a=>{"use strict";a.i(58935);var b=a.i(81065);a.n(b)}];
+
+//# sourceMappingURL=3e71f_next_dist_client_components_builtin_global-error_29b85f30.js.map
