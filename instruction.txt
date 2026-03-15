@@ -1,0 +1,12 @@
+install matlab
+https://getintopc.com/softwares/analysis/matlab-r2024b-free-download/
+
+
+
+
+
+important to do 
+C:\Program Files\MATLAB\R2024b\extern\engines\python
+python setup.py install
+
+npm install in both backend and frontend

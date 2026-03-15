@@ -1,0 +1,11 @@
+POST http://localhost:3000/attendance/send
+{
+  "studentId": "2024CS101",
+  "classId": "CSE-A",
+  "sessionId": "SESSION1"
+}
+GET http://localhost:3000/attendance/SESSION1
+
+
+C:\Program Files\MATLAB\R2024b\extern\engines\python
+python setup.py install
