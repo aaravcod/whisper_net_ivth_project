@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/classes", classRoutes)
+app.use("/whisper", whisperRoutes);
 /* START PYTHON MATLAB SERVICE */
 
 const pythonProcess = spawn("python", ["./matlab-service/server.py"], {

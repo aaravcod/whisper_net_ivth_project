@@ -1,0 +1,2 @@
+WhisperNet is an ultrasonic communication system that enables devices to exchange data without internet, Bluetooth, or NFC
+

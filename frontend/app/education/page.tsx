@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Sidebar } from '@/components/sidebar'
 import { ClassRoster } from '@/components/class-roster'
 import { UltrasonicTransmitter } from '@/components/ultrasonic-transmitter'
@@ -9,156 +9,150 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { useAttendance } from '@/hooks/use-attendance'
 import { Student, Class } from '@/lib/types'
-import { ArrowLeft, Download, Upload } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import { startSession, handshake, sendPacket } from '@/lib/api'
 
 export default function EducationPage() {
-  const { recordAttendance, presentStudents, attendance } = useAttendance()
-  const [selectedClass, setSelectedClass] = useState<Class | null>(null)
+  const { recordAttendance, presentStudents } = useAttendance()
+
   const [students, setStudents] = useState<Student[]>([])
+  const [lastDetected, setLastDetected] = useState<string | null>(null)
 
-  // Mock data
-  useEffect(() => {
-  const fetchClass = async () => {
-    const res = await fetch("http://localhost:4000/classes/class-001")
-    const data = await res.json()
+  const [inputId, setInputId] = useState('')
+  const [newName, setNewName] = useState('')
+  const [newId, setNewId] = useState('')
 
-    setSelectedClass(data)
-    setStudents(data.students)
+  const selectedClass: Class = {
+    id: "class-001",
+    name: "Computer Science",
+    code: "CS101",
+    instructor: "Dr. Sharma",
+    schedule: "Mon-Wed-Fri",
+    students: []
   }
 
-  fetchClass()
-}, [])
+  // ✅ Add student dynamically
+  const handleAddStudent = () => {
+    if (!newName || !newId) return
 
-const handleStudentDetected = async (studentId: string) => {
-  const student = students.find(s => s.studentId === studentId)
+    const newStudent: Student = {
+      id: Date.now().toString(),
+      name: newName,
+      studentId: newId,
+      email: `${newId.toLowerCase()}@demo.com`,
+      enrolled: true
+    }
 
-  if (student && selectedClass) {
-    recordAttendance(student.id, selectedClass.id, 'ultrasonic')
-
-    const session = await startSession("ONE_TO_ONE", "ATTEND")
-
-    await handshake(session.id)
-
-    await sendPacket(session.id, "ATTEND", studentId)
+    setStudents(prev => [...prev, newStudent])
+    setNewName('')
+    setNewId('')
   }
-}
 
-  const handleBroadcastAttendance = async () => {
-  if (!selectedClass) return
+  // ✅ When decoder receives message
+  const handleStudentDetected = (raw: string) => {
+    if (!raw.includes("STUDENT:")) return
 
-  const session = await startSession("BROADCAST", "ATTEND")
+    const studentId = raw.split("STUDENT:")[1]
+    setLastDetected(studentId)
 
-  await handshake(session.id)
+    const student = students.find(s => s.studentId === studentId)
 
-  const result = await sendPacket(
-    session.id,
-    "ATTEND",
-    selectedClass.code
-  )
-
-  console.log("Backend response:", result)
-}
-
-  if (!selectedClass) {
-    return (
-      <div className="flex h-screen bg-background">
-        <Sidebar />
-        <main className="flex-1 overflow-auto">
-          <div className="max-w-5xl mx-auto px-6 py-8">
-            <p className="text-muted-foreground">Loading class data...</p>
-          </div>
-        </main>
-      </div>
-    )
+    if (student) {
+      recordAttendance(student.id, selectedClass.id, 'ultrasonic')
+    }
   }
 
   return (
     <div className="flex h-screen bg-background">
       <Sidebar />
+
       <main className="flex-1 overflow-auto">
         <div className="max-w-7xl mx-auto px-6 py-8">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <Link href="/">
-                <Button variant="ghost" className="mb-4 gap-2">
-                  <ArrowLeft className="w-4 h-4" />
-                  Back
-                </Button>
-              </Link>
-              <h1 className="text-3xl font-bold text-foreground">{selectedClass.name}</h1>
-              <p className="text-muted-foreground mt-2">{selectedClass.code} • {selectedClass.instructor}</p>
-              <p className="text-sm text-muted-foreground mt-1">{selectedClass.schedule}</p>
-            </div>
-            <div className="flex gap-2">
-              <Button variant="outline" className="gap-2">
-                <Download className="w-4 h-4" />
-                Export Report
+
+          {/* HEADER */}
+          <div className="mb-6">
+            <Link href="/">
+              <Button variant="ghost" className="mb-4 gap-2">
+                <ArrowLeft className="w-4 h-4" />
+                Back
               </Button>
-              <Button variant="outline" className="gap-2">
-                <Upload className="w-4 h-4" />
-                Import Roster
-              </Button>
-            </div>
+            </Link>
+
+            <h1 className="text-3xl font-bold">
+              {selectedClass.name}
+            </h1>
+
+            <p className="text-muted-foreground">
+              {selectedClass.code} • {selectedClass.instructor}
+            </p>
           </div>
 
-          {/* Main Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Left Column */}
+
+            {/* LEFT SIDE */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Attendance Summary */}
-              <Card className="p-6">
-                <h3 className="text-lg font-bold text-foreground mb-4">Today's Attendance</h3>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-primary/10 rounded-lg p-4">
-                    <p className="text-sm text-muted-foreground mb-1">Total Students</p>
-                    <p className="text-2xl font-bold text-primary">{students.length}</p>
-                  </div>
-                  <div className="bg-accent/10 rounded-lg p-4">
-                    <p className="text-sm text-muted-foreground mb-1">Present</p>
-                    <p className="text-2xl font-bold text-accent">{presentStudents.size}</p>
-                  </div>
-                  <div className="bg-muted/10 rounded-lg p-4">
-                    <p className="text-sm text-muted-foreground mb-1">Attendance Rate</p>
-                    <p className="text-2xl font-bold text-foreground">
-                      {students.length > 0 ? Math.round((presentStudents.size / students.length) * 100) : 0}%
-                    </p>
-                  </div>
-                </div>
+
+              {/* ADD STUDENT */}
+              <Card className="p-4 space-y-3">
+                <p className="font-semibold">Add Student</p>
+
+                <input
+                  placeholder="Name"
+                  value={newName}
+                  onChange={(e) => setNewName(e.target.value)}
+                  className="w-full px-3 py-2 border rounded"
+                />
+
+                <input
+                  placeholder="Student ID (e.g. STU001)"
+                  value={newId}
+                  onChange={(e) => setNewId(e.target.value)}
+                  className="w-full px-3 py-2 border rounded"
+                />
+
+                <Button onClick={handleAddStudent}>
+                  Add Student
+                </Button>
               </Card>
 
-              {/* Class Roster */}
+              {/* ROSTER */}
               <ClassRoster
                 students={students}
                 presentStudents={presentStudents}
-                onMarkAttendance={(studentId) => {
-                  if (selectedClass) {
-                    recordAttendance(studentId, selectedClass.id, 'manual')
-                  }
+                lastDetected={lastDetected || undefined}
+                onMarkAttendance={(id) => {
+                  recordAttendance(id, selectedClass.id, 'manual')
                 }}
               />
             </div>
 
-            {/* Right Column */}
+            {/* RIGHT SIDE */}
             <div className="space-y-6">
-              {/* Ultrasonic Broadcast */}
-              {/* 🟢 Teacher Broadcast */}
+
+              {/* INPUT */}
+              <Card className="p-4 space-y-3">
+                <p className="text-sm">Broadcast Student ID</p>
+
+                <input
+                  value={inputId}
+                  onChange={(e) => setInputId(e.target.value)}
+                  placeholder="STU001"
+                  className="w-full px-3 py-2 border rounded"
+                />
+              </Card>
+
+              {/* 🔥 TRANSMITTER (CALLS BACKEND) */}
               <UltrasonicTransmitter
-                      data={`CLASS:${selectedClass.code}`}
-                          mode="TEACHER"
-                        />
+                data={`STUDENT:${inputId}`}
+              />
 
-{/* 🔵 Student Response */}
-                <UltrasonicTransmitter
-                data={`STUDENT:STU001`}
-                mode="STUDENT"
-                    />
+              {/* 🔥 DECODER (POLLING BACKEND) */}
+              <StudentIdDecoder
+                onStudentDetected={handleStudentDetected}
+              />
 
-              {/* Student ID Decoder */}
-              <StudentIdDecoder onStudentDetected={handleStudentDetected} />
             </div>
+
           </div>
         </div>
       </main>

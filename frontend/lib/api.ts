@@ -9,6 +9,7 @@ export async function startSession(type: string, mode: string) {
     body: JSON.stringify({ type, mode })
   })
 
+  if (!res.ok) throw new Error("Failed to start session")
   return res.json()
 }
 
@@ -21,6 +22,7 @@ export async function handshake(sessionId: string) {
     body: JSON.stringify({ sessionId })
   })
 
+  if (!res.ok) throw new Error("Handshake failed")
   return res.json()
 }
 
@@ -37,5 +39,6 @@ export async function sendPacket(sessionId: string, command: string, data: strin
     })
   })
 
+  if (!res.ok) throw new Error("Send failed")
   return res.json()
 }

@@ -3,55 +3,63 @@
 import { useEffect, useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { AudioVisualizer } from '@/components/audio-visualizer'
-import { useAudioEngine } from '@/hooks/use-audio-engine'
 
-export function SOSReceiver() {
-  const [isListening, setIsListening] = useState(false)
+interface SOSReceiverProps {
+  isListening: boolean
+}
+
+export function SOSReceiver({ isListening }: SOSReceiverProps) {
   const [receiverState, setReceiverState] = useState("IDLE")
   const [receivedSOS, setReceivedSOS] = useState<any>(null)
 
-  const { startListening, isInitialized } = useAudioEngine()
-
   useEffect(() => {
-    if (!isInitialized) return
+    if (!isListening) {
+      setReceiverState("IDLE")
+      return
+    }
 
-    let stopFn: any
+    setReceiverState("LISTENING")
 
-    const start = async () => {
-      const stop = await startListening({
-        onData: async (payload) => {
-          const message = payload.packet?.body ?? payload.raw
+    const interval = setInterval(async () => {
+      try {
+        const res = await fetch("http://localhost:4000/whisper/listen")
+        const data = await res.json()
 
-          if (!message.startsWith("SOS:")) return
+        console.log("📡 SOS Listen:", data)
 
+        if (data.message && data.message.startsWith("SOS:")) {
           setReceiverState("RECEIVING")
 
-          await new Promise(r => setTimeout(r, 600))
+          await new Promise(r => setTimeout(r, 300))
           setReceiverState("DECODING")
 
-          await new Promise(r => setTimeout(r, 600))
-          setReceiverState("COMPLETE")
+          await new Promise(r => setTimeout(r, 300))
+          setReceiverState("VALIDATING")
+
+          const raw = data.message.replace("SOS:", "")
 
           try {
-            const decoded = JSON.parse(message.replace("SOS:", ""))
-            setReceivedSOS(decoded)
+            const parsed = JSON.parse(raw)
+            setReceivedSOS(parsed)
           } catch {
-            setReceivedSOS(message)
+            setReceivedSOS(raw)
           }
+
+          setReceiverState("COMPLETE")
+
+          setTimeout(() => {
+            setReceiverState("LISTENING")
+          }, 1000)
         }
-      })
 
-      stopFn = stop
-      setIsListening(true)
-      setReceiverState("LISTENING")
-    }
+      } catch (err) {
+        console.error("❌ Listen error:", err)
+        setReceiverState("ERROR")
+      }
+    }, 1000)
 
-    start()
-
-    return () => {
-      stopFn?.()
-    }
-  }, [isInitialized])
+    return () => clearInterval(interval)
+  }, [isListening])
 
   return (
     <Card className="p-4 space-y-4">
@@ -59,12 +67,17 @@ export function SOSReceiver() {
 
       <AudioVisualizer isActive={isListening} state={receiverState} />
 
-      <p className="text-xs text-muted-foreground">State: {receiverState}</p>
+      <p className="text-xs text-muted-foreground">
+        State: <span className="font-mono">{receiverState}</span>
+      </p>
 
       {receivedSOS && (
         <div className="text-sm">
-          <p className="font-semibold text-destructive">🚨 SOS Received</p>
-          <pre className="text-xs bg-muted p-2 rounded">
+          <p className="font-semibold text-destructive animate-pulse">
+            🚨 SOS RECEIVED
+          </p>
+
+          <pre className="text-xs bg-muted p-2 rounded overflow-auto">
             {JSON.stringify(receivedSOS, null, 2)}
           </pre>
         </div>
