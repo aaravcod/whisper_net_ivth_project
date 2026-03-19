@@ -11,6 +11,7 @@ import { SOSMapView } from '@/components/sos-map-view'
 import { SOSSignalCard } from '@/components/sos-signal-card'
 import { UltrasonicTransmitter } from '@/components/ultrasonic-transmitter'
 import { Button } from '@/components/ui/button'
+import { SOSReceiver } from '@/components/sos-receiver'
 import {
   Card,
   CardContent,
@@ -96,7 +97,7 @@ export default function DisasterPage() {
 
     if (!signal) return
 
-    setLastSignalPayload(encodeSOSData(signal))
+    setLastSignalPayload(`SOS:${encodeSOSData(signal)}`)
     setIsAlertOpen(true)
     setMessage('')
   }
@@ -176,12 +177,22 @@ export default function DisasterPage() {
             </div>
 
             <div className="space-y-6">
-              {lastSignalPayload && (
-                <UltrasonicTransmitter
-                  data={lastSignalPayload}
-                  onTransmitStart={() => console.log('Broadcasting SOS via ultrasonic')}
-                />
-              )}
+              <div className="space-y-6">
+
+                    {lastSignalPayload && (
+                      <UltrasonicTransmitter
+                          data={lastSignalPayload}
+                                />
+                              )}
+
+                    <SOSReceiver />
+
+                        <Card>
+    ...
+                      </Card>
+
+                        </div>
+        
 
               <Card className="gap-0 py-0">
                 <CardHeader className="space-y-2 border-b border-border/60 py-5">
