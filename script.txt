@@ -1,2 +1,152 @@
-WhisperNet is an ultrasonic communication system that enables devices to exchange data without internet, Bluetooth, or NFC
+🟢 1. INTRO (15–20 sec)
 
+👉 Start like this:
+
+“Good morning, this is WhisperNet, a cross-domain ultrasonic communication system.
+It enables devices to exchange data without internet using encoded signals processed via a MATLAB backend.”
+
+🟢 2. CORE IDEA (20 sec)
+
+“Instead of traditional networking, we encode structured data into signals, process them via MATLAB, and reconstruct them on the receiving side in real time.”
+
+🟢 3. ATTENDANCE MODULE (🔥 strongest part)
+
+👉 Open Attendance page
+
+🎯 Say:
+
+“This module demonstrates student attendance using signal-based communication.”
+
+👉 Demo steps:
+
+Add student:
+
+Name: Aarav  
+ID: STU001
+
+Click:
+
+Send Signal
+🎯 Say:
+
+“This generates a signal containing the student ID.”
+
+Click:
+
+Start Listening
+💥 Show:
+
+Decoder updates
+
+Student marked present
+
+🎯 Say:
+
+“The receiver decodes the signal and marks attendance automatically — no manual input required.”
+
+🟢 4. SOS MODULE (real-world impact)
+
+👉 Open Disaster Mode
+
+🎯 Say:
+
+“This module simulates emergency communication in low-connectivity environments.”
+
+👉 Demo:
+
+Click:
+
+Start Listening
+
+Enter:
+
+Fire in building
+
+Click:
+
+Send SOS
+💥 Show:
+
+Receiver updates
+
+SOS appears
+
+Map updates
+
+🎯 Say:
+
+“Emergency signals are encoded with location and severity, transmitted, and decoded in real time.”
+
+🟢 5. HEALTHCARE MODULE (🔥 strong finish)
+
+👉 Open Healthcare
+
+🎯 Say:
+
+“This module demonstrates secure transmission of patient data.”
+
+👉 Demo:
+
+Add patient:
+
+Name: Rahul  
+ID: P001  
+Condition: Fever
+
+Select patient from dropdown
+
+Click:
+
+🚀 Broadcast Patient Data
+
+Click:
+
+Start Listening
+💥 Show:
+
+New patient appears
+
+🎯 Say:
+
+“Patient data is serialized, transmitted, and reconstructed on the receiver side without direct database sharing.”
+
+🟢 6. TECH EXPLANATION (important)
+
+👉 Keep it simple:
+
+“The frontend sends structured data to a Node.js backend.
+The backend calls a MATLAB engine which encodes and decodes signals.
+The receiver continuously polls the backend for decoded messages.”
+
+🟢 7. WHY NO MIC (VERY IMPORTANT)
+
+👉 They WILL ask this
+
+Say:
+
+“Due to hardware limitations in laptops for ultrasonic frequencies, we replaced direct audio transmission with a MATLAB-based simulation pipeline.”
+
+🟢 8. UNIQUE POINT (killer line)
+
+“The system is modular — the same communication layer supports education, emergency, and healthcare use cases.”
+
+🟢 9. CLOSING
+
+“This demonstrates how alternative communication systems can work in offline or constrained environments.”
+
+🧠 POSSIBLE QUESTIONS (WITH ANSWERS)
+❓ Why MATLAB?
+
+“For accurate signal processing and frequency-based encoding/decoding.”
+
+❓ Why not real ultrasonic?
+
+“Laptop hardware limitations above ~18kHz make it unreliable.”
+
+❓ Is it scalable?
+
+“Yes, the protocol layer is independent and can be extended to IoT devices.”
+
+❓ Is it real-time?
+
+“Yes, near real-time using backend polling.”
