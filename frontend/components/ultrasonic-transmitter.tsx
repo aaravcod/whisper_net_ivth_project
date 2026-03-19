@@ -8,16 +8,20 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { useAudioEngine } from '@/hooks/use-audio-engine'
 import type { EncodedPayload } from '@/lib/audio-engine'
+import { startSession, handshake, sendPacket } from '@/lib/api'
 
 interface UltrasonicTransmitterProps {
   data: string
+  mode?:"TEACHER"|"STUDENT"
   onTransmitStart?: () => void
   onTransmitEnd?: () => void
 }
 
-export function UltrasonicTransmitter({ data, onTransmitStart, onTransmitEnd }: UltrasonicTransmitterProps) {
+export function UltrasonicTransmitter({ data, mode ,onTransmitStart, onTransmitEnd }: UltrasonicTransmitterProps) {
   const [isTransmitting, setIsTransmitting] = useState(false)
   const [payloadPreview, setPayloadPreview] = useState<EncodedPayload | null>(null)
+  const [protocolState, setProtocolState] = useState("IDLE")
+  const [backendData, setBackendData] = useState<any>(null)
 
   const { isInitialized, error, preparePayload, playAudio } = useAudioEngine()
 
@@ -37,39 +41,83 @@ export function UltrasonicTransmitter({ data, onTransmitStart, onTransmitEnd }: 
   }, [payloadPreview])
 
   const handleTransmit = async () => {
-    if (!data || !isInitialized) return
+  if (!data || !isInitialized) return
 
-    try {
-      setIsTransmitting(true)
-      onTransmitStart?.()
+  try {
+    setIsTransmitting(true)
+    setProtocolState("INIT")
+    onTransmitStart?.()
 
-      const payload = payloadPreview ?? preparePayload(data)
-      if (payload) {
-        await playAudio(payload.audioBuffer)
-      }
+    const session = await startSession("BROADCAST", "ATTEND")
 
-      await new Promise(resolve => setTimeout(resolve, 1500))
+    setProtocolState("HANDSHAKE")
+    await handshake(session.id)
 
-      setIsTransmitting(false)
-      onTransmitEnd?.()
-    } catch (err) {
-      console.error('Transmission error:', err)
-      setIsTransmitting(false)
+    setProtocolState("ENCODING")
+
+    const backendResult = await sendPacket(
+      session.id,
+      "ATTEND",
+      data
+    )
+
+    setBackendData(backendResult)
+
+    setProtocolState("TRANSMITTING")
+
+    const payload = payloadPreview ?? preparePayload(data)
+
+    if (payload) {
+      await playAudio(payload.audioBuffer)
     }
+
+    setProtocolState("COMPLETE")
+
+    setTimeout(() => {
+      setIsTransmitting(false)
+      setProtocolState("IDLE")
+      onTransmitEnd?.()
+    }, 1500)
+
+  } catch (err) {
+    console.error("Transmission error:", err)
+    setIsTransmitting(false)
+    setProtocolState("ERROR")
   }
+}
 
   return (
     <Card className="p-6">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-bold text-foreground">Ultrasonic Transmitter</h3>
+        <h3 className="text-lg font-bold text-foreground">
+            Ultrasonic Transmitter ({mode || "STUDENT"})
+        </h3>
         <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
           {isInitialized ? 'Engine ready' : 'Init engine'}
         </span>
       </div>
 
-      <AudioVisualizer isActive={isTransmitting} className="mb-6" />
+      <AudioVisualizer isActive={isTransmitting} state={protocolState} className="mb-6" />
 
+      <div className="rounded-xl border border-border/70 bg-muted/30 p-3 text-xs mb-4">
+        <p className="text-muted-foreground mb-1">Protocol Status</p>
+        <p className="font-mono text-primary">{protocolState}</p>
+      </div>  
       <div className="space-y-4">
+        {payloadPreview && (
+            <div className="text-xs font-mono">
+                <p className="text-muted-foreground mb-1">Signal Mapping</p>
+                <p>
+                {payloadPreview.binary.slice(0, 32)}...
+                </p>
+            </div>
+)}
+        {backendData && (  
+            <div className="rounded-xl border border-border/70 bg-muted/20 p-3 text-xs">  
+              <p className="text-muted-foreground mb-1">Signal Data</p>  
+              <p>Frequencies: {backendData.frequencies?.join(", ")}</p>  
+            </div>  
+          )}
         <div className="rounded-xl border border-border/70 bg-card/60 p-4">
           <p className="text-sm text-muted-foreground mb-2">Payload</p>
           <p className="font-mono text-primary break-all text-sm">{data || 'No data'}</p>

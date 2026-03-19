@@ -18,6 +18,10 @@ export function StudentIdDecoder({ onStudentDetected }: StudentIdDecoderProps) {
   const [isListening, setIsListening] = useState(false)
   const [detectedPayloads, setDetectedPayloads] = useState<DecodedPayload[]>([])
 
+  // 🔥 NEW STATES
+  const [receiverState, setReceiverState] = useState("IDLE")
+  const [currentSignal, setCurrentSignal] = useState<any>(null)
+
   const stopRecordingRef = useRef<(() => void) | null>(null)
 
   const {
@@ -32,16 +36,37 @@ export function StudentIdDecoder({ onStudentDetected }: StudentIdDecoderProps) {
     if (!isInitialized || isListening) return
 
     const stop = await startListening({
-      onData: (payload) => {
+      onData: async (payload) => {
+        // 🔥 SIMULATED RECEIVER FLOW
+        setReceiverState("RECEIVING")
+        setCurrentSignal(payload)
+
+        await new Promise(res => setTimeout(res, 700))
+
+        setReceiverState("DECODING")
+        await new Promise(res => setTimeout(res, 700))
+
+        setReceiverState("VALIDATING")
+        await new Promise(res => setTimeout(res, 500))
+
         setDetectedPayloads(prev => [...prev.slice(-4), payload])
+
         const candidateId = payload.packet?.body ?? payload.raw
+
+        setReceiverState("COMPLETE")
+
         onStudentDetected(candidateId)
+
+        setTimeout(() => {
+          setReceiverState("LISTENING")
+        }, 1000)
       },
     })
 
     if (stop) {
       stopRecordingRef.current = stop
       setIsListening(true)
+      setReceiverState("LISTENING") // 🔥 important
     }
   }
 
@@ -49,6 +74,7 @@ export function StudentIdDecoder({ onStudentDetected }: StudentIdDecoderProps) {
     stopRecordingRef.current?.()
     stopRecordingRef.current = null
     setIsListening(false)
+    setReceiverState("IDLE")
   }
 
   const confidencePercent = Math.round(listeningConfidence * 100)
@@ -62,7 +88,25 @@ export function StudentIdDecoder({ onStudentDetected }: StudentIdDecoderProps) {
         </span>
       </div>
 
-      <AudioVisualizer isActive={isListening} className="mb-4" />
+      {/* 🔥 VISUALIZER */}
+      <AudioVisualizer isActive={isListening} state={receiverState} className="mb-4" />
+
+      {/* 🔥 RECEIVER STATUS */}
+      <div className="rounded-xl border border-border/70 bg-muted/30 p-3 text-xs mb-4">
+        <p className="text-muted-foreground mb-1">Receiver Status</p>
+        <p className="font-mono text-primary">{receiverState}</p>
+      </div>
+
+      {/* 🔥 SIGNAL INFO */}
+      {currentSignal && (
+        <div className="rounded-xl border border-border/70 bg-muted/20 p-3 text-xs mb-4">
+          <p className="text-muted-foreground mb-1">Incoming Signal</p>
+          <p className="font-mono text-primary">
+            {currentSignal.packet?.body ?? currentSignal.raw}
+          </p>
+        </div>
+      )}
+
       <AudioSpectrum frame={analysisFrame} />
 
       <div className="mt-6 space-y-4">
@@ -81,7 +125,6 @@ export function StudentIdDecoder({ onStudentDetected }: StudentIdDecoderProps) {
                 .reverse()
                 .map((payload, idx) => (
                   <span
-                    // eslint-disable-next-line react/no-array-index-key
                     key={idx}
                     className="rounded-full bg-primary/10 px-3 py-1 text-xs font-mono text-primary"
                   >

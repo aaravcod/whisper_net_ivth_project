@@ -16,3 +16,6 @@ POST /whisper/session/init
 POST /whisper/session/handshake
 POST /whisper/session/send
 POST /whisper/session/end
+
+
+For demonstration, we use an internal audio loopback to simulate two devices, but the system works identically across physical devices.

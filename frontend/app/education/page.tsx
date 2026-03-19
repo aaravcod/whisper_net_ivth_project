@@ -11,6 +11,7 @@ import { useAttendance } from '@/hooks/use-attendance'
 import { Student, Class } from '@/lib/types'
 import { ArrowLeft, Download, Upload } from 'lucide-react'
 import Link from 'next/link'
+import { startSession, handshake, sendPacket } from '@/lib/api'
 
 export default function EducationPage() {
   const { recordAttendance, presentStudents, attendance } = useAttendance()
@@ -19,37 +20,46 @@ export default function EducationPage() {
 
   // Mock data
   useEffect(() => {
-    const mockClass: Class = {
-      id: 'class-001',
-      name: 'Introduction to Computer Science',
-      code: 'CS101',
-      instructor: 'Dr. Sarah Johnson',
-      students: [
-        { id: '1', name: 'Alice Chen', studentId: 'A001', email: 'alice@school.edu', enrolled: true },
-        { id: '2', name: 'Bob Martinez', studentId: 'B002', email: 'bob@school.edu', enrolled: true },
-        { id: '3', name: 'Carol Williams', studentId: 'C003', email: 'carol@school.edu', enrolled: true },
-        { id: '4', name: 'David Lee', studentId: 'D004', email: 'david@school.edu', enrolled: true },
-        { id: '5', name: 'Eva Rodriguez', studentId: 'E005', email: 'eva@school.edu', enrolled: true },
-      ],
-      schedule: 'MWF 10:00 AM - 11:30 AM',
-    }
-    setSelectedClass(mockClass)
-    setStudents(mockClass.students)
-  }, [])
+  const fetchClass = async () => {
+    const res = await fetch("http://localhost:4000/classes/class-001")
+    const data = await res.json()
 
-  const handleStudentDetected = (studentId: string) => {
-    const student = students.find(s => s.studentId === studentId)
-    if (student && selectedClass) {
-      recordAttendance(student.id, selectedClass.id, 'ultrasonic')
-    }
+    setSelectedClass(data)
+    setStudents(data.students)
   }
 
-  const handleBroadcastAttendance = () => {
-    if (selectedClass) {
-      const classData = `CLASS:${selectedClass.code}|TIME:${new Date().toISOString()}`
-      console.log('Broadcasting:', classData)
-    }
+  fetchClass()
+}, [])
+
+const handleStudentDetected = async (studentId: string) => {
+  const student = students.find(s => s.studentId === studentId)
+
+  if (student && selectedClass) {
+    recordAttendance(student.id, selectedClass.id, 'ultrasonic')
+
+    const session = await startSession("ONE_TO_ONE", "ATTEND")
+
+    await handshake(session.id)
+
+    await sendPacket(session.id, "ATTEND", studentId)
   }
+}
+
+  const handleBroadcastAttendance = async () => {
+  if (!selectedClass) return
+
+  const session = await startSession("BROADCAST", "ATTEND")
+
+  await handshake(session.id)
+
+  const result = await sendPacket(
+    session.id,
+    "ATTEND",
+    selectedClass.code
+  )
+
+  console.log("Backend response:", result)
+}
 
   if (!selectedClass) {
     return (
@@ -134,10 +144,17 @@ export default function EducationPage() {
             {/* Right Column */}
             <div className="space-y-6">
               {/* Ultrasonic Broadcast */}
+              {/* 🟢 Teacher Broadcast */}
               <UltrasonicTransmitter
-                data={`CLASS:${selectedClass.code}`}
-                onTransmitStart={handleBroadcastAttendance}
-              />
+                      data={`CLASS:${selectedClass.code}`}
+                          mode="TEACHER"
+                        />
+
+{/* 🔵 Student Response */}
+                <UltrasonicTransmitter
+                data={`STUDENT:STU001`}
+                mode="STUDENT"
+                    />
 
               {/* Student ID Decoder */}
               <StudentIdDecoder onStudentDetected={handleStudentDetected} />

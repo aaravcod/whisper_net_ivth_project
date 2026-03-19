@@ -1,7 +1,4 @@
 {
-  "/disaster/page": "app/disaster/page.js",
   "/education/page": "app/education/page.js",
-  "/healthcare/page": "app/healthcare/page.js",
-  "/page": "app/page.js",
-  "/settings/page": "app/settings/page.js"
+  "/page": "app/page.js"
 }
