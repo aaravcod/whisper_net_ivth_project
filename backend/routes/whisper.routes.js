@@ -12,9 +12,6 @@ import { routePacket } from "../services/router.service.js";
 
 const router = express.Router();
 
-// 🔥 Shared buffer (acts like "signal in air")
-let lastMessage = null;
-
 /* =========================
    SESSION INIT
 ========================= */
@@ -39,7 +36,7 @@ router.post("/session/handshake", (req, res) => {
 });
 
 /* =========================
-   SEND (MAIN FLOW)
+   SEND (SESSION FLOW)
 ========================= */
 router.post("/session/send", async (req, res) => {
   const { sessionId, command, data } = req.body;
@@ -57,12 +54,7 @@ router.post("/session/send", async (req, res) => {
   const packet = `${sessionId}|${command}|${data}`;
 
   try {
-    // 🔥 THIS calls MATLAB via transport layer
     const decoded = await transmitPacket(packet);
-
-    // 🔥 STORE for listener (VERY IMPORTANT)
-    lastMessage = decoded;
-
     const parsed = parsePacket(decoded);
 
     if (parsed.error) {
@@ -78,25 +70,7 @@ router.post("/session/send", async (req, res) => {
     });
 
   } catch (err) {
-    console.error("Send error:", err);
     res.status(500).json({ error: err.message });
-  }
-});
-
-/* =========================
-   LISTEN (POLLING)
-========================= */
-router.get("/listen", (req, res) => {
-  if (lastMessage) {
-    console.log("📥 Delivering message:", lastMessage);
-
-    res.json({ message: lastMessage });
-
-    // 🔥 Clear after sending (important)
-    lastMessage = null;
-
-  } else {
-    res.json({ message: null });
   }
 });
 
@@ -112,6 +86,68 @@ router.post("/session/end", (req, res) => {
   }
 
   res.json({ status: "CLOSED", session });
+});
+
+/* =========================
+   USER SYSTEM
+========================= */
+router.post('/register', (req, res) => {
+  const { username, deviceId } = req.body;
+
+  if (!username || !deviceId) {
+    return res.status(400).json({ error: 'Missing fields' });
+  }
+
+  global.activeUsers[username] = deviceId;
+
+  res.json({ success: true, users: Object.keys(global.activeUsers) });
+});
+
+router.get('/users', (req, res) => {
+  res.json({ users: Object.keys(global.activeUsers) });
+});
+
+/* =========================
+   CHAT SEND
+========================= */
+router.post('/send', (req, res) => {
+  const { type, payload } = req.body;
+
+  if (!type || !payload) {
+    return res.status(400).json({ error: 'Invalid message format' });
+  }
+
+  const message = {
+    id: Date.now(),
+    type,
+    decoded: payload,
+    timestamp: new Date().toISOString()
+  };
+
+  global.messageQueue.push(message);
+
+  res.json({ success: true });
+});
+
+/* =========================
+   CHAT LISTEN
+========================= */
+router.get('/listen', (req, res) => {
+  const user = req.query.user;
+
+  if (!user) {
+    return res.status(400).json({ error: 'User required' });
+  }
+
+  const userMessages = global.messageQueue.filter(
+    msg => msg.decoded?.to === user
+  );
+
+  global.messageQueue = global.messageQueue.filter(
+    msg => msg.decoded?.to !== user
+  );
+
+  res.json({ messages: userMessages });
 });
 
 export default router;

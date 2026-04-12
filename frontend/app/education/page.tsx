@@ -17,6 +17,7 @@ export default function EducationPage() {
 
   const [students, setStudents] = useState<Student[]>([])
   const [lastDetected, setLastDetected] = useState<string | null>(null)
+  const [signalStatus, setSignalStatus] = useState('Idle')
 
   const [inputId, setInputId] = useState('')
   const [newName, setNewName] = useState('')
@@ -31,7 +32,6 @@ export default function EducationPage() {
     students: []
   }
 
-  // ✅ Add student dynamically
   const handleAddStudent = () => {
     if (!newName || !newId) return
 
@@ -48,9 +48,10 @@ export default function EducationPage() {
     setNewId('')
   }
 
-  // ✅ When decoder receives message
-  const handleStudentDetected = (raw: string) => {
+  const handleStudentDetected = async (raw: string) => {
     if (!raw.includes("STUDENT:")) return
+
+    setSignalStatus("🔓 Decoding signal...")
 
     const studentId = raw.split("STUDENT:")[1]
     setLastDetected(studentId)
@@ -59,7 +60,12 @@ export default function EducationPage() {
 
     if (student) {
       recordAttendance(student.id, selectedClass.id, 'ultrasonic')
+      setSignalStatus("✅ Attendance Marked")
+    } else {
+      setSignalStatus("⚠️ Unknown Student")
     }
+
+    setTimeout(() => setSignalStatus("Idle"), 2000)
   }
 
   return (
@@ -129,9 +135,9 @@ export default function EducationPage() {
             {/* RIGHT SIDE */}
             <div className="space-y-6">
 
-              {/* INPUT */}
+              {/* BROADCAST */}
               <Card className="p-4 space-y-3">
-                <p className="text-sm">Broadcast Student ID</p>
+                <p className="text-sm font-semibold">Broadcast Student ID</p>
 
                 <input
                   value={inputId}
@@ -141,15 +147,49 @@ export default function EducationPage() {
                 />
               </Card>
 
-              {/* 🔥 TRANSMITTER (CALLS BACKEND) */}
-              <UltrasonicTransmitter
-                data={`STUDENT:${inputId}`}
-              />
+              {/* TRANSMITTER */}
+              <Card className="p-4 space-y-2">
+                <p className="text-sm font-semibold">Transmitter</p>
 
-              {/* 🔥 DECODER (POLLING BACKEND) */}
+                <Button
+                  onClick={() => setSignalStatus("🔐 Encoding signal...")}
+                  className="w-full"
+                >
+                  Send Ultrasonic Signal
+                </Button>
+
+                <UltrasonicTransmitter
+                  data={`STUDENT:${inputId}`}
+                />
+              </Card>
+
+              {/* DECODER */}
               <StudentIdDecoder
                 onStudentDetected={handleStudentDetected}
               />
+
+              {/* SIGNAL PANEL 🔥 */}
+              <Card className="p-4 space-y-2">
+                <p className="font-semibold">Signal Processing</p>
+
+                <div className="text-sm text-muted-foreground">
+                  {signalStatus}
+                </div>
+
+                <div className="text-xs text-muted-foreground">
+                  Device → MATLAB Encoding → Ultrasonic Signal → MATLAB Decoding → Attendance
+                </div>
+              </Card>
+
+              {/* DETECTED INFO */}
+              {lastDetected && (
+                <Card className="p-4">
+                  <p className="text-sm">
+                    Last Detected ID:
+                    <span className="font-bold ml-2">{lastDetected}</span>
+                  </p>
+                </Card>
+              )}
 
             </div>
 

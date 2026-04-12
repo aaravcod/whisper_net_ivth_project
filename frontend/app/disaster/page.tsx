@@ -32,9 +32,10 @@ export default function DisasterPage() {
   const [message, setMessage] = useState('')
   const [severity] = useState<SeverityLevel>('critical')
   const [isAlertOpen, setIsAlertOpen] = useState(false)
-
-  // 🔥 LISTEN CONTROL
   const [isListening, setIsListening] = useState(false)
+
+  // 🔥 SIGNAL STATUS
+  const [signalStatus, setSignalStatus] = useState('Idle')
 
   useEffect(() => {
     getCurrentLocation()
@@ -42,7 +43,7 @@ export default function DisasterPage() {
 
   const recentSignals = useMemo(() => signals.slice(0, 5), [signals])
 
-  // 🔥 SEND SOS → BACKEND
+  // 🔥 SEND SOS
   const handleSOSActivate = async () => {
     const signal = await broadcastSOSSignal(
       message || 'Emergency SOS',
@@ -54,22 +55,35 @@ export default function DisasterPage() {
     const payload = `SOS:${encodeSOSData(signal)}`
 
     try {
+      // 🔐 Encoding
+      setSignalStatus("🔐 Encoding emergency signal...")
+      await new Promise(res => setTimeout(res, 300))
+
       const session = await startSession("BROADCAST", "SOS")
       await handshake(session.id)
 
-      await sendPacket(
-        session.id,
-        "SOS",
-        payload
-      )
+      // 📡 Transmission
+      setSignalStatus("📡 Broadcasting via MATLAB...")
+      await new Promise(res => setTimeout(res, 500))
+
+      await sendPacket(session.id, "SOS", payload)
+
+      // 🔓 Decoding
+      setSignalStatus("🔓 Decoding at receivers...")
+      await new Promise(res => setTimeout(res, 300))
+
+      setSignalStatus("🚨 SOS Delivered")
 
       console.log("🚨 SOS sent:", payload)
 
       setIsAlertOpen(true)
       setMessage('')
 
+      setTimeout(() => setSignalStatus("Idle"), 2000)
+
     } catch (err) {
       console.error("❌ SOS send failed:", err)
+      setSignalStatus("❌ Transmission Failed")
     }
   }
 
@@ -92,7 +106,7 @@ export default function DisasterPage() {
 
         <h1 className="text-3xl font-bold">SOS Emergency System</h1>
 
-        {/* 🔥 RECEIVER CONTROL BUTTON */}
+        {/* RECEIVER CONTROL */}
         <Card className="p-4 flex justify-between items-center">
           <p className="text-sm text-muted-foreground">
             Receiver Control
@@ -120,7 +134,20 @@ export default function DisasterPage() {
           </CardContent>
         </Card>
 
-        {/* 🔥 RECEIVER */}
+        {/* 🔥 SIGNAL PANEL */}
+        <Card className="p-4 space-y-2">
+          <p className="font-semibold">Signal Processing</p>
+
+          <div className="text-sm text-muted-foreground">
+            {signalStatus}
+          </div>
+
+          <div className="text-xs text-muted-foreground">
+            Device → MATLAB Encoding → Ultrasonic Broadcast → MATLAB Decoding → Receivers
+          </div>
+        </Card>
+
+        {/* RECEIVER */}
         <SOSReceiver isListening={isListening} />
 
         {/* MAP */}

@@ -28,13 +28,15 @@ export default function HealthcarePage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedPatientId, setSelectedPatientId] = useState<string | null>(null)
 
-  // 🔥 BROADCAST CONTROL
   const [triggerBroadcast, setTriggerBroadcast] = useState(false)
+  const [signalStatus, setSignalStatus] = useState('Idle')
 
   const filteredPatients = searchTerm ? searchPatients(searchTerm) : patients
 
-  // ✅ RECEIVE DATA
+  // RECEIVE DATA
   const handleDataReceived = (data: any) => {
+    setSignalStatus("🔓 Decoding health data...")
+
     const raw = data.parsed ?? data.raw
 
     try {
@@ -46,11 +48,14 @@ export default function HealthcarePage() {
         healthData: decoded.healthData ?? {},
       })
 
-      console.log("✅ Patient received:", decoded)
+      setSignalStatus("✅ Patient Data Received")
 
     } catch (err) {
       console.error("❌ Invalid health data:", err)
+      setSignalStatus("❌ Decode Failed")
     }
+
+    setTimeout(() => setSignalStatus("Idle"), 2000)
   }
 
   const selectedPatient = selectedPatientId
@@ -78,12 +83,12 @@ export default function HealthcarePage() {
                 </Button>
               </Link>
 
-              <h1 className="text-3xl font-bold text-foreground">
+              <h1 className="text-3xl font-bold">
                 Healthcare Module
               </h1>
 
               <p className="text-muted-foreground mt-2">
-                Manage patient records and share health data securely
+                Patient data transmission via ultrasonic communication
               </p>
             </div>
 
@@ -99,13 +104,11 @@ export default function HealthcarePage() {
             </Button>
           </div>
 
-          {/* MAIN GRID */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            {/* LEFT SIDE */}
+            {/* LEFT */}
             <div className="lg:col-span-2 space-y-6">
 
-              {/* FORM */}
               {showForm && (
                 <HealthDataForm
                   onSubmit={(data) => {
@@ -125,7 +128,6 @@ export default function HealthcarePage() {
                 />
               )}
 
-              {/* SEARCH */}
               {!showForm && patients.length > 0 && (
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -135,12 +137,11 @@ export default function HealthcarePage() {
                     placeholder="Search patients..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 bg-input border border-border rounded-lg"
+                    className="w-full pl-10 pr-4 py-2 border rounded-lg"
                   />
                 </div>
               )}
 
-              {/* PATIENT LIST */}
               {!showForm && (
                 <>
                   {filteredPatients.length === 0 ? (
@@ -174,12 +175,11 @@ export default function HealthcarePage() {
               )}
             </div>
 
-            {/* RIGHT SIDE */}
+            {/* RIGHT */}
             <div className="space-y-6">
 
               {selectedPatient && (
                 <>
-                  {/* SELECTED PATIENT */}
                   <Card className="p-4 bg-accent/10 border border-accent/30">
                     <p className="text-sm text-muted-foreground">
                       Selected Patient
@@ -190,18 +190,25 @@ export default function HealthcarePage() {
                     </p>
                   </Card>
 
-                  {/* 🔥 REAL BROADCAST BUTTON */}
                   <Button
                     className="w-full"
-                    onClick={() => {
+                    onClick={async () => {
                       if (!dataToTransmit) return
+
+                      setSignalStatus("🔐 Encoding patient data...")
+                      await new Promise(res => setTimeout(res, 300))
+
+                      setSignalStatus("📡 Transmitting via MATLAB...")
+                      await new Promise(res => setTimeout(res, 500))
+
                       setTriggerBroadcast(true)
+
+                      setSignalStatus("🔓 Awaiting decode...")
                     }}
                   >
                     🚀 Broadcast Patient Data
                   </Button>
 
-                  {/* 🔥 TRANSMITTER (TRIGGERED) */}
                   {triggerBroadcast && (
                     <UltrasonicTransmitter
                       data={dataToTransmit}
@@ -211,12 +218,24 @@ export default function HealthcarePage() {
                 </>
               )}
 
-              {/* RECEIVER */}
               <Card className="p-3 text-xs text-muted-foreground">
                 📡 Receiver listens for HEALTH data
               </Card>
 
               <HealthDataReceiver onDataReceived={handleDataReceived} />
+
+              {/* 🔥 SIGNAL PANEL */}
+              <Card className="p-4 space-y-2">
+                <p className="font-semibold">Signal Processing</p>
+
+                <div className="text-sm text-muted-foreground">
+                  {signalStatus}
+                </div>
+
+                <div className="text-xs text-muted-foreground">
+                  Device → MATLAB Encoding → Ultrasonic Transfer → MATLAB Decoding → Patient Reconstruction
+                </div>
+              </Card>
 
             </div>
           </div>

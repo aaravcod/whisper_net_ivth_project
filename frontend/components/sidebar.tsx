@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Music, Stethoscope, AlertTriangle, Settings, Home } from 'lucide-react'
+import { Music, Stethoscope, AlertTriangle, Settings, Home,MessageCircle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const routes = [
@@ -26,11 +26,18 @@ const routes = [
     icon: AlertTriangle,
     href: '/disaster',
   },
+    {
+  label: 'Chat',
+  icon: MessageCircle,
+  href: '/chat',
+  },
   {
     label: 'Settings',
     icon: Settings,
     href: '/settings',
   },
+
+  
 ]
 
 export function Sidebar() {

@@ -6,9 +6,16 @@ import classRoutes from "./routes/class.routes.js"
 
 
 const app = express();
+global.activeUsers = {}
+global.messageQueue = []
 
 app.use(cors());
 app.use(express.json());
+app.use(cors({
+  origin:"http://localhost:3000",
+  credentials:true,
+}
+))
 app.use("/classes", classRoutes)
 app.use("/whisper", whisperRoutes);
 /* START PYTHON MATLAB SERVICE */
