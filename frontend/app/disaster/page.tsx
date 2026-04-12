@@ -3,11 +3,11 @@
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
+import dynamic from 'next/dynamic'
 
 import { EmergencyAlert } from '@/components/emergency-alert'
 import { Sidebar } from '@/components/sidebar'
 import { SOSButton } from '@/components/sos-button'
-import { SOSMapView } from '@/components/sos-map-view'
 import { SOSSignalCard } from '@/components/sos-signal-card'
 import { SOSReceiver } from '@/components/sos-receiver'
 import { Button } from '@/components/ui/button'
@@ -17,6 +17,12 @@ import { useSOSSignals } from '@/hooks/use-sos-signals'
 import type { SOSSignal } from '@/lib/types'
 
 import { startSession, handshake, sendPacket } from '@/lib/api'
+
+// 🔥 SSR FIX FOR LEAFLET (CRITICAL)
+const SOSMapView = dynamic(
+  () => import('@/components/sos-map-view').then(mod => mod.SOSMapView),
+  { ssr: false }
+)
 
 type SeverityLevel = 'low' | 'medium' | 'high' | 'critical'
 
@@ -34,7 +40,6 @@ export default function DisasterPage() {
   const [isAlertOpen, setIsAlertOpen] = useState(false)
   const [isListening, setIsListening] = useState(false)
 
-  // 🔥 SIGNAL STATUS
   const [signalStatus, setSignalStatus] = useState('Idle')
 
   useEffect(() => {
@@ -43,7 +48,7 @@ export default function DisasterPage() {
 
   const recentSignals = useMemo(() => signals.slice(0, 5), [signals])
 
-  // 🔥 SEND SOS
+  // 🚨 SEND SOS
   const handleSOSActivate = async () => {
     const signal = await broadcastSOSSignal(
       message || 'Emergency SOS',
@@ -93,7 +98,8 @@ export default function DisasterPage() {
 
       <main className="flex-1 p-6 space-y-6">
 
-        <div className="text-center text-xs text-muted-foreground">
+        {/* STATUS BAR */}
+        <div className="text-center text-xs text-muted-foreground animate-pulse">
           📡 Ultrasonic SOS communication active
         </div>
 
@@ -134,23 +140,28 @@ export default function DisasterPage() {
           </CardContent>
         </Card>
 
-        {/* 🔥 SIGNAL PANEL */}
-        <Card className="p-4 space-y-2">
+        {/* SIGNAL PANEL */}
+        <Card className="p-4 space-y-3">
           <p className="font-semibold">Signal Processing</p>
 
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm font-medium">
             {signalStatus}
           </div>
 
+          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <span className="animate-pulse">📡</span>
+            <span>Ultrasonic broadcast active</span>
+          </div>
+
           <div className="text-xs text-muted-foreground">
-            Device → MATLAB Encoding → Ultrasonic Broadcast → MATLAB Decoding → Receivers
+            Device → MATLAB → Ultrasonic → Decode → Live Map
           </div>
         </Card>
 
         {/* RECEIVER */}
         <SOSReceiver isListening={isListening} />
 
-        {/* MAP */}
+        {/* MAP (NOW FIXED) */}
         <SOSMapView
           signals={signals}
           userLocation={currentLocation || undefined}
@@ -171,6 +182,7 @@ export default function DisasterPage() {
 
       </main>
 
+      {/* ALERT */}
       <EmergencyAlert
         isOpen={isAlertOpen}
         onClose={() => setIsAlertOpen(false)}

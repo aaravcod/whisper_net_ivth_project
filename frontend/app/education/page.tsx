@@ -1,10 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Sidebar } from '@/components/sidebar'
 import { ClassRoster } from '@/components/class-roster'
-import { UltrasonicTransmitter } from '@/components/ultrasonic-transmitter'
-import { StudentIdDecoder } from '@/components/student-id-decoder'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { useAttendance } from '@/hooks/use-attendance'
@@ -32,6 +30,7 @@ export default function EducationPage() {
     students: []
   }
 
+  // ✅ ADD STUDENT
   const handleAddStudent = () => {
     if (!newName || !newId) return
 
@@ -48,25 +47,65 @@ export default function EducationPage() {
     setNewId('')
   }
 
-  const handleStudentDetected = async (raw: string) => {
-    if (!raw.includes("STUDENT:")) return
+  // ✅ SEND (LIKE CHAT)
+  const sendStudent = async () => {
+    if (!inputId) return
 
-    setSignalStatus("🔓 Decoding signal...")
+    setSignalStatus("🔐 Encoding student ID...")
+    await new Promise(res => setTimeout(res, 300))
 
-    const studentId = raw.split("STUDENT:")[1]
-    setLastDetected(studentId)
+    setSignalStatus("📡 Transmitting via MATLAB...")
+    await new Promise(res => setTimeout(res, 500))
 
-    const student = students.find(s => s.studentId === studentId)
+    await fetch('http://localhost:4000/whisper/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: 'education',
+        payload: {
+          to: 'all',
+          studentId: inputId
+        }
+      })
+    })
 
-    if (student) {
-      recordAttendance(student.id, selectedClass.id, 'ultrasonic')
-      setSignalStatus("✅ Attendance Marked")
-    } else {
-      setSignalStatus("⚠️ Unknown Student")
-    }
-
-    setTimeout(() => setSignalStatus("Idle"), 2000)
+    setSignalStatus("🔓 Awaiting decode...")
   }
+
+  // ✅ LISTEN (FIXED)
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      const res = await fetch('http://localhost:4000/whisper/listen?user=all')
+      const data = await res.json()
+
+      if (Array.isArray(data.messages) && data.messages.length > 0) {
+        data.messages.forEach((msg: any) => {
+
+          if (msg.type === 'education' && msg.decoded) {
+
+            const studentId = msg.decoded.studentId // 🔥 FIX HERE
+
+            setSignalStatus("🔓 Decoding signal...")
+            setLastDetected(studentId)
+
+            const student = students.find(s => s.studentId === studentId)
+
+            if (student) {
+              recordAttendance(student.id, selectedClass.id, 'ultrasonic')
+              setSignalStatus("✅ Attendance Marked")
+            } else {
+              setSignalStatus("⚠️ Unknown Student")
+            }
+
+            setTimeout(() => setSignalStatus("Idle"), 2000)
+          }
+
+        })
+      }
+    }, 1500)
+
+    return () => clearInterval(interval)
+  }, [students])
 
   return (
     <div className="flex h-screen bg-background">
@@ -95,10 +134,9 @@ export default function EducationPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            {/* LEFT SIDE */}
+            {/* LEFT */}
             <div className="lg:col-span-2 space-y-6">
 
-              {/* ADD STUDENT */}
               <Card className="p-4 space-y-3">
                 <p className="font-semibold">Add Student</p>
 
@@ -110,7 +148,7 @@ export default function EducationPage() {
                 />
 
                 <input
-                  placeholder="Student ID (e.g. STU001)"
+                  placeholder="Student ID"
                   value={newId}
                   onChange={(e) => setNewId(e.target.value)}
                   className="w-full px-3 py-2 border rounded"
@@ -121,7 +159,6 @@ export default function EducationPage() {
                 </Button>
               </Card>
 
-              {/* ROSTER */}
               <ClassRoster
                 students={students}
                 presentStudents={presentStudents}
@@ -132,10 +169,9 @@ export default function EducationPage() {
               />
             </div>
 
-            {/* RIGHT SIDE */}
+            {/* RIGHT */}
             <div className="space-y-6">
 
-              {/* BROADCAST */}
               <Card className="p-4 space-y-3">
                 <p className="text-sm font-semibold">Broadcast Student ID</p>
 
@@ -145,30 +181,12 @@ export default function EducationPage() {
                   placeholder="STU001"
                   className="w-full px-3 py-2 border rounded"
                 />
-              </Card>
 
-              {/* TRANSMITTER */}
-              <Card className="p-4 space-y-2">
-                <p className="text-sm font-semibold">Transmitter</p>
-
-                <Button
-                  onClick={() => setSignalStatus("🔐 Encoding signal...")}
-                  className="w-full"
-                >
+                <Button onClick={sendStudent} className="w-full">
                   Send Ultrasonic Signal
                 </Button>
-
-                <UltrasonicTransmitter
-                  data={`STUDENT:${inputId}`}
-                />
               </Card>
 
-              {/* DECODER */}
-              <StudentIdDecoder
-                onStudentDetected={handleStudentDetected}
-              />
-
-              {/* SIGNAL PANEL 🔥 */}
               <Card className="p-4 space-y-2">
                 <p className="font-semibold">Signal Processing</p>
 
@@ -177,11 +195,10 @@ export default function EducationPage() {
                 </div>
 
                 <div className="text-xs text-muted-foreground">
-                  Device → MATLAB Encoding → Ultrasonic Signal → MATLAB Decoding → Attendance
+                  Frontend → Backend → MATLAB → Backend → Attendance
                 </div>
               </Card>
 
-              {/* DETECTED INFO */}
               {lastDetected && (
                 <Card className="p-4">
                   <p className="text-sm">

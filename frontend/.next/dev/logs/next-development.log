@@ -1,52 +1,497 @@
-[00:00:01.105] Server  LOG      ✓ Ready in 694ms
-[00:00:17.600] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:18.139] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:18.139] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:18.139] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:00:18.139] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010542585} /_vercel/insights/view
-[00:00:18.139] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010542585} /_vercel/insights/view
-[00:00:21.138] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:21.316] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:21.316] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:21.316] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010545752} /_vercel/insights/view
-[00:00:21.316] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010545762} /_vercel/insights/view
-[00:00:24.708] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010549156} /_vercel/insights/view
-[00:00:26.305] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010550745} /_vercel/insights/view
-[00:00:30.696] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:30.696] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:30.696] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:30.696] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:00:30.696] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010555235} /_vercel/insights/view
-[00:00:30.696] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010555235} /_vercel/insights/view
-[00:00:34.314] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010558762} /_vercel/insights/view
-[00:00:35.647] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010560087} /_vercel/insights/view
-[00:00:44.197] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:44.314] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:44.314] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/chat","route":"/chat"}
-[00:00:44.314] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010568760} /_vercel/insights/view
-[00:00:47.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:47.641] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:47.641] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/chat","route":"/chat"}
-[00:00:47.641] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010572085} /_vercel/insights/view
-[00:02:44.158] Server  LOG      ✓ Compiled in 57ms
-[00:02:44.652] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+[00:00:00.991] Server  LOG      ✓ Ready in 645ms
+[00:00:07.570] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.787] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:07.787] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/disaster","route":"/disaster"}
+[00:00:07.787] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/disaster color: rgb(120, 120, 120) color: inherit {"dp":"/disaster","o":"http://localhost:3000/disaster","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776015817168} /_vercel/insights/view
+[00:00:17.976] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:18.129] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:18.129] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/disaster","route":"/disaster"}
+[00:00:18.129] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/disaster color: rgb(120, 120, 120) color: inherit {"dp":"/disaster","o":"http://localhost:3000/disaster","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776015827511} /_vercel/insights/view
+[00:00:57.084] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:00:58.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:00:59.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:00.095] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:01.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:02.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:03.072] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:04.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:05.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:06.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:06.396] Browser LOG     🚨 SOS sent: SOS:SOS|SENDER:USER_w5sm6pnr5|LAT:28.645057974373863|LON:77.34547286454794|SEV:critical|MSG:help|TIME:2026-04-12T17:44:34.343Z
+[00:01:07.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:08.076] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:09.069] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:10.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:11.072] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:12.080] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:13.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:14.074] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:15.096] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:16.101] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:17.093] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:18.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:19.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:20.083] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:21.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:22.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:23.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:24.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:25.095] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:26.077] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:27.090] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:28.072] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:29.081] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:30.074] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:31.084] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:32.075] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:33.098] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:34.076] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:35.082] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:36.077] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:37.086] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:39.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:40.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:41.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:42.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:43.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:44.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:45.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:46.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:47.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:48.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:49.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:50.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:51.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:52.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:53.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:54.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:55.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:56.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:57.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:58.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:01:59.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:00.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:01.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:02.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:03.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:04.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:05.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:06.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:07.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:08.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:09.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:10.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:11.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:12.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:13.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:14.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:15.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:16.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:17.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:18.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:19.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:20.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:21.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:22.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:23.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:24.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:02:54.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:03:54.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:13.855] Server  LOG      ✓ Compiled in 86ms
+[00:04:14.718] Browser ERROR   ./frontend/hooks/use-sos-signals.ts:34:10
+Parsing ecmascript source code failed
+  32 |
+  33 |   return (
+> 34 |     <div className="h-[400px] w-full rounded-xl overflow-hidden border">
+     |          ^^^^^^^^^
+  35 |
+  36 |       {!userLocation?.latitude && (
+  37 |         <div className="text-xs text-center p-2 text-muted-foreground">
 
-Previous: %s
-Incoming: %s useEffect [aarav2] [aarav2, aarav]
-[00:02:44.652] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+Expected '>', got 'className'
 
-Previous: %s
-Incoming: %s useEffect [aarav] [aarav, aarav2]
-[00:04:17.902] Server  LOG      ✓ Compiled in 57ms
-[00:04:18.659] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+Import traces:
+  Client Component Browser:
+    ./frontend/hooks/use-sos-signals.ts [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
 
-Previous: %s
-Incoming: %s useEffect [aarav2, aarav] [aarav2]
-[00:04:18.660] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+  Client Component SSR:
+    ./frontend/hooks/use-sos-signals.ts [Client Component SSR]
+    ./frontend/app/disaster/page.tsx [Client Component SSR]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:04:25.717] Browser ERROR   ./frontend/hooks/use-sos-signals.ts:34:10
+Parsing ecmascript source code failed
+  32 |
+  33 |   return (
+> 34 |     <div className="h-[400px] w-full rounded-xl overflow-hidden border">
+     |          ^^^^^^^^^
+  35 |
+  36 |       {!userLocation?.latitude && (
+  37 |         <div className="text-xs text-center p-2 text-muted-foreground">
 
-Previous: %s
-Incoming: %s useEffect [aarav, aarav2] [aarav]
-[00:04:22.515] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:22.679] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:22.679] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/chat","route":"/chat"}
-[00:04:22.679] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776010787127} /_vercel/insights/view
+Expected '>', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/hooks/use-sos-signals.ts [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/hooks/use-sos-signals.ts [Client Component SSR]
+    ./frontend/app/disaster/page.tsx [Client Component SSR]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:04:28.920] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:29.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:30.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:31.068] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:32.069] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:33.777] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:34.069] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:35.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:36.068] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:38.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:39.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:40.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:41.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:42.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:43.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:44.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:45.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:46.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:47.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:48.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:49.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:50.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:51.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:52.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:53.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:54.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:54.982] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:55.095] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:56.069] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:57.072] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:58.068] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:04:59.072] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:01.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:02.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:03.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:04.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:05.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:06.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:07.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:08.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:08.829] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:09.071] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:10.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:11.069] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:12.070] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:14.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:15.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:16.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:17.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:18.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:19.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:20.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:21.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:22.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:23.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:24.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:25.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:26.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:27.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:28.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:29.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:30.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:31.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:32.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:33.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:34.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:35.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:36.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:37.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:38.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:39.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:40.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:41.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:42.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:43.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:44.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:45.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:46.723] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:47.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:48.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:49.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:50.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:51.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:52.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:53.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:54.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:55.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:56.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:57.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:58.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:05:59.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:00.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:01.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:02.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:03.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:04.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:05.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:06.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:07.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:08.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:09.718] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:10.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:11.717] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:12.727] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:06:54.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:08:01.716] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:08:25.719] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'appendChild')
+[00:08:25.719] Browser ERROR   uncaughtError: Error: Map container is being reused by another instance
+[00:08:28.482] Server  LOG      ✓ Compiled in 52ms
+[00:08:28.717] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:08:53.717] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:09:40.718] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:09:43.717] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:09:46.241] Server  ERROR    ⨯ ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+
+
+[00:09:46.386] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:09:46.991] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:09:46.991] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:09:47.533] Browser ERROR   uncaughtError: Error: ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+
+
+[00:09:47.702] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:09:47.702] Browser ERROR   ./frontend/components/sos-map-view.tsx:1:9
+Parsing ecmascript source code failed
+> 1 | Parsing ecmascript source code failed
+    |         ^^^^^^^^^^
+  2 | ./frontend/hooks/use-sos-signals.ts (34:10)
+  3 |
+  4 | Parsing ecmascript source code failed
+
+Expected ';', '}' or <eof>
+
+Import trace:
+  Client Component Browser:
+    ./frontend/components/sos-map-view.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Client Component Browser]
+    ./frontend/app/disaster/page.tsx [Server Component]
+[00:10:31.310] Server  LOG      ✓ Compiled in 46ms
+[00:10:31.560] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:32.732] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:32.732] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/disaster","route":"/disaster"}
+[00:10:32.732] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/disaster color: rgb(120, 120, 120) color: inherit {"dp":"/disaster","o":"http://localhost:3000/disaster","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776016441239} /_vercel/insights/view
+[00:10:52.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:10:53.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:10:54.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:10:55.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:10:56.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:10:57.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:10:58.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:10:59.054] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:00.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:01.059] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:02.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:02.210] Browser LOG     🚨 SOS sent: SOS:SOS|SENDER:USER_hkq3fw1t6|LAT:28.645053998225478|LON:77.34548966943389|SEV:critical|MSG:help|TIME:2026-04-12T17:54:30.153Z
+[00:11:03.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:04.053] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:05.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:06.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:07.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:08.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:09.087] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:10.059] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:11.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:12.052] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:13.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:14.059] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:15.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:16.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:17.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:18.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:19.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:20.055] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:21.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:22.055] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:23.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:24.058] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:25.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:26.055] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:27.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:28.056] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:29.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:30.160] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:31.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:32.056] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:33.056] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:34.052] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:35.052] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:36.054] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:37.053] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:38.052] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:39.052] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:40.053] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:41.053] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:41.160] Browser LOG     🚨 SOS sent: SOS:SOS|SENDER:USER_9tes2t30k|LAT:28.645076909677005|LON:77.34545957028645|SEV:critical|MSG:Emergency SOS|TIME:2026-04-12T17:55:09.304Z
+[00:11:42.053] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:43.057] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:44.055] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:45.053] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:46.053] Browser LOG     📡 SOS Listen: {"error":"User required"}
+[00:11:47.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:47.288] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:47.288] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/disaster","route":"/disaster"}
+[00:11:47.288] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/disaster color: rgb(120, 120, 120) color: inherit {"dp":"/disaster","o":"http://localhost:3000/disaster","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776016516669} /_vercel/insights/view
+[00:12:08.283] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:08.724] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:08.724] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:12:08.724] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:12:08.724] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776016538101} /_vercel/insights/view
+[00:12:08.724] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776016538101} /_vercel/insights/view
+[00:12:11.663] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776016541030} /_vercel/insights/view
+[00:12:13.371] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776016542744} /_vercel/insights/view
+[00:12:14.820] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/disaster color: rgb(120, 120, 120) color: inherit {"dp":"/disaster","o":"http://localhost:3000/disaster","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776016544200} /_vercel/insights/view
