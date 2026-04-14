@@ -11,9 +11,10 @@ import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
 export default function EducationPage() {
-  const { recordAttendance, presentStudents } = useAttendance()
+  const { recordAttendance } = useAttendance()
 
   const [students, setStudents] = useState<Student[]>([])
+  const [markedPresent, setMarkedPresent] = useState<string[]>([])
   const [lastDetected, setLastDetected] = useState<string | null>(null)
   const [signalStatus, setSignalStatus] = useState('Idle')
 
@@ -30,7 +31,6 @@ export default function EducationPage() {
     students: []
   }
 
-  // ✅ ADD STUDENT
   const handleAddStudent = () => {
     if (!newName || !newId) return
 
@@ -47,7 +47,64 @@ export default function EducationPage() {
     setNewId('')
   }
 
-  // ✅ SEND (LIKE CHAT)
+  const handleCSVImport = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    const reader = new FileReader()
+
+    reader.onload = (event: ProgressEvent<FileReader>) => {
+      const text = event.target?.result as string
+      const lines = text.split('\n').filter(line => line.trim() !== '')
+
+      const dataLines = lines.slice(1)
+
+      const newStudents: Student[] = dataLines.map((line, index) => {
+        const [name, studentId] = line.split(',').map(v => v.trim())
+
+        return {
+          id: `${Date.now()}-${index}`,
+          name,
+          studentId,
+          email: `${studentId.toLowerCase()}@demo.com`,
+          enrolled: true
+        }
+      })
+
+      setStudents(prev => {
+        const existingIds = new Set(prev.map(s => s.studentId))
+        const filtered = newStudents.filter(s => !existingIds.has(s.studentId))
+        return [...prev, ...filtered]
+      })
+    }
+
+    reader.readAsText(file)
+  }
+
+  const exportAttendanceCSV = () => {
+    if (!students.length) return
+
+    const header = "Name,StudentID,Status"
+
+    const rows = students.map(student => {
+      const isPresent = markedPresent.includes(student.studentId)
+      const status = isPresent ? "Present" : "Absent"
+      return `${student.name},${student.studentId},${status}`
+    })
+
+    const csvContent = [header, ...rows].join('\n')
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+    const url = URL.createObjectURL(blob)
+
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'attendance-report.csv'
+    link.click()
+
+    URL.revokeObjectURL(url)
+  }
+
   const sendStudent = async () => {
     if (!inputId) return
 
@@ -57,50 +114,57 @@ export default function EducationPage() {
     setSignalStatus("📡 Transmitting via MATLAB...")
     await new Promise(res => setTimeout(res, 500))
 
-    await fetch('http://localhost:4000/whisper/send', {
+    await fetch('http://127.0.0.1:4000/whisper/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         type: 'education',
-        payload: {
-          to: 'all',
-          studentId: inputId
-        }
+        payload: { to: 'all', studentId: inputId }
       })
     })
 
     setSignalStatus("🔓 Awaiting decode...")
   }
 
-  // ✅ LISTEN (FIXED)
   useEffect(() => {
     const interval = setInterval(async () => {
-      const res = await fetch('http://localhost:4000/whisper/listen?user=all')
-      const data = await res.json()
+      try {
+        const res = await fetch('http://127.0.0.1:4000/whisper/listen?user=all')
+        if (!res.ok) return
 
-      if (Array.isArray(data.messages) && data.messages.length > 0) {
-        data.messages.forEach((msg: any) => {
+        const data = await res.json()
 
-          if (msg.type === 'education' && msg.decoded) {
+        if (Array.isArray(data.messages)) {
+          data.messages.forEach((msg: any) => {
+            if (msg.type === 'education' && msg.decoded) {
 
-            const studentId = msg.decoded.studentId // 🔥 FIX HERE
+              const studentId = msg.decoded.studentId
 
-            setSignalStatus("🔓 Decoding signal...")
-            setLastDetected(studentId)
+              setSignalStatus("🔓 Decoding signal...")
+              setLastDetected(studentId)
 
-            const student = students.find(s => s.studentId === studentId)
+              const student = students.find(s => s.studentId === studentId)
 
-            if (student) {
-              recordAttendance(student.id, selectedClass.id, 'ultrasonic')
-              setSignalStatus("✅ Attendance Marked")
-            } else {
-              setSignalStatus("⚠️ Unknown Student")
+              if (student) {
+                recordAttendance(student.id, selectedClass.id, 'ultrasonic')
+
+                setMarkedPresent(prev =>
+                  prev.includes(student.studentId)
+                    ? prev
+                    : [...prev, student.studentId]
+                )
+
+                setSignalStatus("✅ Attendance Marked")
+              } else {
+                setSignalStatus("⚠️ Unknown Student")
+              }
+
+              setTimeout(() => setSignalStatus("Idle"), 2000)
             }
-
-            setTimeout(() => setSignalStatus("Idle"), 2000)
-          }
-
-        })
+          })
+        }
+      } catch {
+        setSignalStatus("⚠️ Backend Offline")
       }
     }, 1500)
 
@@ -114,7 +178,6 @@ export default function EducationPage() {
       <main className="flex-1 overflow-auto">
         <div className="max-w-7xl mx-auto px-6 py-8">
 
-          {/* HEADER */}
           <div className="mb-6">
             <Link href="/">
               <Button variant="ghost" className="mb-4 gap-2">
@@ -123,10 +186,7 @@ export default function EducationPage() {
               </Button>
             </Link>
 
-            <h1 className="text-3xl font-bold">
-              {selectedClass.name}
-            </h1>
-
+            <h1 className="text-3xl font-bold">{selectedClass.name}</h1>
             <p className="text-muted-foreground">
               {selectedClass.code} • {selectedClass.instructor}
             </p>
@@ -134,7 +194,6 @@ export default function EducationPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            {/* LEFT */}
             <div className="lg:col-span-2 space-y-6">
 
               <Card className="p-4 space-y-3">
@@ -157,19 +216,47 @@ export default function EducationPage() {
                 <Button onClick={handleAddStudent}>
                   Add Student
                 </Button>
+
+                <label className="cursor-pointer">
+                  <div className="border rounded p-2 text-sm text-center hover:bg-muted">
+                    Upload CSV File
+                  </div>
+                  <input
+                    type="file"
+                    accept=".csv"
+                    onChange={handleCSVImport}
+                    className="hidden"
+                  />
+                </label>
+
+                <Button onClick={exportAttendanceCSV} variant="outline">
+                  Export Attendance CSV
+                </Button>
               </Card>
 
               <ClassRoster
                 students={students}
-                presentStudents={presentStudents}
+                presentStudents={new Set(
+                  students
+                    .filter(s => markedPresent.includes(s.studentId))
+                    .map(s => s.id)
+                )}
                 lastDetected={lastDetected || undefined}
                 onMarkAttendance={(id) => {
                   recordAttendance(id, selectedClass.id, 'manual')
+
+                  const student = students.find(s => s.id === id)
+                  if (student) {
+                    setMarkedPresent(prev =>
+                      prev.includes(student.studentId)
+                        ? prev
+                        : [...prev, student.studentId]
+                    )
+                  }
                 }}
               />
             </div>
 
-            {/* RIGHT */}
             <div className="space-y-6">
 
               <Card className="p-4 space-y-3">

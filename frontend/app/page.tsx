@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Music, Stethoscope, AlertTriangle, Settings } from 'lucide-react'
+import { BookOpen, MessageCircle, AlertTriangle, Settings } from 'lucide-react'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -11,7 +11,7 @@ export default function Dashboard() {
   const router = useRouter()
 
   useEffect(() => {
-    const user = sessionStorage.getItem('username') // ✅ FIXED
+    const user = sessionStorage.getItem('username')
     if (!user) {
       router.push('/login')
     }
@@ -25,7 +25,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-linear-to-br from-primary to-accent flex items-center justify-center">
-                <Music className="w-6 h-6 text-primary-foreground" />
+                <BookOpen className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-foreground">WhisperNet</h1>
@@ -57,11 +57,12 @@ export default function Dashboard() {
         {/* Module Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+          {/* EDUCATION */}
           <Link href="/education">
             <Card className="h-full p-6 hover:border-primary/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-primary/10 group">
               <div className="flex flex-col gap-4 h-full">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Music className="w-6 h-6 text-primary" />
+                  <BookOpen className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2">Education</h3>
@@ -76,25 +77,7 @@ export default function Dashboard() {
             </Card>
           </Link>
 
-          <Link href="/healthcare">
-            <Card className="h-full p-6 hover:border-accent/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-accent/10 group">
-              <div className="flex flex-col gap-4 h-full">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <Stethoscope className="w-6 h-6 text-accent" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-2">Healthcare</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Secure patient data sharing
-                  </p>
-                </div>
-                <Button className="w-full mt-auto" variant="outline">
-                  Get Started
-                </Button>
-              </div>
-            </Card>
-          </Link>
-
+          {/* DISASTER */}
           <Link href="/disaster">
             <Card className="h-full p-6 hover:border-destructive/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-destructive/10 group">
               <div className="flex flex-col gap-4 h-full">
@@ -114,11 +97,12 @@ export default function Dashboard() {
             </Card>
           </Link>
 
+          {/* CHAT */}
           <Link href="/chat">
             <Card className="h-full p-6 hover:border-primary/50 transition-all cursor-pointer hover:shadow-lg hover:shadow-primary/10 group">
               <div className="flex flex-col gap-4 h-full">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Music className="w-6 h-6 text-primary" />
+                  <MessageCircle className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2">Chat System</h3>

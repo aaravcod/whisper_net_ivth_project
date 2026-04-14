@@ -1,6 +1,5 @@
 {
-  "/chat/page": "app/chat/page.js",
-  "/disaster/page": "app/disaster/page.js",
-  "/login/page": "app/login/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/healthcare/page": "app/healthcare/page.js",
   "/page": "app/page.js"
 }
