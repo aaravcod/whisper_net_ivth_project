@@ -1,18 +1,201 @@
-[00:00:01.005] Server  LOG      ✓ Ready in 629ms
-[00:00:03.668] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.779] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:03.779] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/healthcare","route":"/healthcare"}
-[00:00:03.779] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/healthcare color: rgb(120, 120, 120) color: inherit {"dp":"/healthcare","o":"http://localhost:3000/healthcare","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776159437087} /_vercel/insights/view
-[00:00:26.931] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776159460237} /_vercel/insights/view
-[00:00:28.109] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/healthcare color: rgb(120, 120, 120) color: inherit {"dp":"/healthcare","o":"http://localhost:3000/healthcare","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776159461413} /_vercel/insights/view
-[00:23:33.003] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:33.652] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:23:33.652] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/healthcare","route":"/healthcare"}
-[00:23:33.652] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/healthcare color: rgb(120, 120, 120) color: inherit {"dp":"/healthcare","o":"http://localhost:3000/healthcare","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776160846477} /_vercel/insights/view
-[00:23:37.311] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:23:37.423] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:23:37.423] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/healthcare","route":"/healthcare"}
-[00:23:37.423] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/healthcare color: rgb(120, 120, 120) color: inherit {"dp":"/healthcare","o":"http://localhost:3000/healthcare","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776160850723} /_vercel/insights/view
-[00:23:38.508] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776160851805} /_vercel/insights/view
-[00:25:09.361] Server  LOG      ✓ Compiled in 54ms
-[00:27:11.853] Server  LOG      ✓ Compiled in 52ms
+[00:00:01.590] Server  LOG      ✓ Ready in 1028ms
+[00:00:01.624] Browser ERROR   User polling error: {}
+[00:00:01.624] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.624] Browser ERROR   User polling error: {}
+[00:00:01.624] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.624] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.624] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.624] Browser ERROR   User polling error: {}
+[00:00:01.624] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.624] Browser ERROR   User polling error: {}
+[00:00:01.624] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   User polling error: {}
+[00:00:01.634] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   User polling error: {}
+[00:00:01.634] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   unhandledRejection: TypeError: Failed to fetch
+[00:00:01.634] Browser ERROR   User polling error: {}
+[00:00:04.436] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:04.437] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:04.437] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+next/font: warning:
+Failed to download `Geist` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:04.438] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+next/font: warning:
+Failed to download `Geist Mono` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:04.980] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:04.981] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:04.981] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+next/font: warning:
+Failed to download `Geist` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:04.982] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+next/font: warning:
+Failed to download `Geist Mono` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.557] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.557] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.557] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+next/font: warning:
+Failed to download `Geist` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.557] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+next/font: warning:
+Failed to download `Geist Mono` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.616] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.764] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.764] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.764] Server  WARN     ⚠ [next]/internal/font/google/geist_a7695b8e.module.css
+next/font: warning:
+Failed to download `Geist` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_a7695b8e.module.css
+    [next]/internal/font/google/geist_a7695b8e.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.765] Server  WARN     ⚠ [next]/internal/font/google/geist_mono_354fc78.module.css
+next/font: warning:
+Failed to download `Geist Mono` from Google Fonts. Using fallback font instead.
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/geist_mono_354fc78.module.css
+    [next]/internal/font/google/geist_mono_354fc78.js
+    ./frontend/app/layout.tsx
+
+
+[00:00:05.776] Browser LOG     [Vercel Web Analytics] Failed to load script from https://va.vercel-scripts.com/v1/script.debug.js. Please check if any ad blockers are enabled and try again.
+[00:00:05.790] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.070] Browser LOG     [Vercel Web Analytics] Failed to load script from https://va.vercel-scripts.com/v1/script.debug.js. Please check if any ad blockers are enabled and try again.

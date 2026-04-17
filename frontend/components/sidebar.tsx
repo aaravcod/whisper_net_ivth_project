@@ -16,11 +16,7 @@ const routes = [
     icon: Music,
     href: '/education',
   },
-  {
-    label: 'Healthcare',
-    icon: Stethoscope,
-    href: '/healthcare',
-  },
+
   {
     label: 'Disaster',
     icon: AlertTriangle,

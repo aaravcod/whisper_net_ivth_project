@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'WhisperNet - Ultrasonic Device Communication',
-  description: 'WhisperNet: Secure ultrasonic audio-based device-to-device data transfer for education, healthcare, and emergency response.',
+  description: 'WhisperNet: Secure ultrasonic audio-based device-to-device data transfer for education, and emergency response.',
   generator: 'v0.app',
   icons: {
     icon: [
