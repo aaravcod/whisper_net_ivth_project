@@ -4,7 +4,7 @@ import os
 app = Flask(__name__)
 
 print("Starting MATLAB engine...")
-# Faster, headless start
+
 matlab_path=r"./matlab"
 eng = matlab.engine.start_matlab("-nojvm -nodisplay")
 
@@ -27,7 +27,7 @@ def process_packet():
         return jsonify({"error": "No packet provided"}), 400
 
     try:
-        # whisperEngine should return decoded string
+        
         result = eng.whisperEngine(packet)
         return jsonify({"decoded": result})
     except Exception as e:

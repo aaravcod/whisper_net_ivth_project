@@ -1,6 +1,6 @@
 function encoded = encodeMessage(message)
 
-    % 🔥 Convert full string to binary
+    %Convert full string to binary
     binary = reshape(dec2bin(uint8(message), 8).', 1, []);
 
     encoded = [];

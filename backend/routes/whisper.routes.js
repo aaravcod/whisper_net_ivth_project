@@ -12,18 +12,14 @@ import { routePacket } from "../services/router.service.js";
 
 const router = express.Router();
 
-/* =========================
-   SESSION INIT
-========================= */
+
 router.post("/session/init", (req, res) => {
   const { type, mode } = req.body;
   const session = createSession(type, mode);
   res.json(session);
 });
 
-/* =========================
-   HANDSHAKE
-========================= */
+
 router.post("/session/handshake", (req, res) => {
   const { sessionId } = req.body;
   const session = activateSession(sessionId);
@@ -35,9 +31,7 @@ router.post("/session/handshake", (req, res) => {
   res.json({ status: "ACTIVE", session });
 });
 
-/* =========================
-   SEND (SESSION FLOW)
-========================= */
+
 router.post("/session/send", async (req, res) => {
   const { sessionId, command, data } = req.body;
 
@@ -74,9 +68,7 @@ router.post("/session/send", async (req, res) => {
   }
 });
 
-/* =========================
-   END SESSION
-========================= */
+
 router.post("/session/end", (req, res) => {
   const { sessionId } = req.body;
   const session = closeSession(sessionId);
@@ -88,9 +80,7 @@ router.post("/session/end", (req, res) => {
   res.json({ status: "CLOSED", session });
 });
 
-/* =========================
-   USER SYSTEM
-========================= */
+
 router.post('/register', (req, res) => {
   const { username, deviceId } = req.body;
 
@@ -107,9 +97,7 @@ router.get('/users', (req, res) => {
   res.json({ users: Object.keys(global.activeUsers) });
 });
 
-/* =========================
-   CHAT SEND
-========================= */
+
 router.post('/send', (req, res) => {
   const { type, payload } = req.body;
 
@@ -129,9 +117,7 @@ router.post('/send', (req, res) => {
   res.json({ success: true });
 });
 
-/* =========================
-   CHAT LISTEN
-========================= */
+
 router.get('/listen', (req, res) => {
   const user = req.query.user;
 

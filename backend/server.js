@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { spawn } from "child_process";
 import whisperRoutes from "./routes/whisper.routes.js";
-import classRoutes from "./routes/class.routes.js"
+
 
 
 const app = express();
@@ -16,9 +16,9 @@ app.use(cors({
   credentials:true,
 }
 ))
-app.use("/classes", classRoutes)
-app.use("/whisper", whisperRoutes);
-/* START PYTHON MATLAB SERVICE */
+
+
+
 
 const pythonProcess = spawn("python", ["./matlab-service/server.py"], {
   stdio: "inherit"
@@ -28,7 +28,7 @@ pythonProcess.on("error", (err) => {
   console.error("Failed to start Python MATLAB service:", err);
 });
 
-/* ROUTES */
+
 
 app.use("/whisper", whisperRoutes);
 
