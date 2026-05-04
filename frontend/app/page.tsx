@@ -5,17 +5,10 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { BookOpen, MessageCircle, AlertTriangle, Settings } from 'lucide-react'
 import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+
 
 export default function Dashboard() {
-  const router = useRouter()
-
-  useEffect(() => {
-    const user = sessionStorage.getItem('username')
-    if (!user) {
-      router.push('/login')
-    }
-  }, [router])
+  
 
   return (
     <main className="min-h-screen bg-background">

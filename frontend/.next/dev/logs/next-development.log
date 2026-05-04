@@ -1,5 +1,489 @@
-[00:00:02.659] Server  LOG      ✓ Ready in 2.4s
-[00:00:07.560] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:08.652] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:08.652] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/education","route":"/education"}
-[00:00:08.652] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/education color: rgb(120, 120, 120) color: inherit {"dp":"/education","o":"http://localhost:3000/education","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1776387572445} /_vercel/insights/view
+[00:00:00.769] Server  LOG      ✓ Ready in 493ms
+[00:00:02.998] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.150] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:03.150] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:00:03.150] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912193673} /_vercel/insights/view
+[00:00:04.569] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.679] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:04.679] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:00:04.679] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912195199} /_vercel/insights/view
+[00:00:07.539] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.726] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:07.726] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:07.726] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912198221} /_vercel/insights/view
+[00:00:07.726] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912198244} /_vercel/insights/view
+[00:01:42.198] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:42.661] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:42.661] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:01:42.661] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912292893} /_vercel/insights/view
+[00:01:47.077] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:47.077] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:47.077] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:01:47.077] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912297697} /_vercel/insights/view
+[00:02:59.812] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:59.931] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:59.931] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:02:59.931] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912370453} /_vercel/insights/view
+[00:03:02.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:03.031] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:03.031] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:03:03.031] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912373558} /_vercel/insights/view
+[00:03:04.482] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/education color: rgb(120, 120, 120) color: inherit {"dp":"/education","o":"http://localhost:3000/education","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912375007} /_vercel/insights/view
+[00:03:05.558] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912376084} /_vercel/insights/view
+[00:03:06.490] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912377015} /_vercel/insights/view
+[00:03:25.174] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:25.174] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:25.174] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:03:25.174] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912395676} /_vercel/insights/view
+[00:03:26.474] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/chat color: rgb(120, 120, 120) color: inherit {"dp":"/chat","o":"http://localhost:3000/chat","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912396985} /_vercel/insights/view
+[00:06:42.974] Server  LOG      ✓ Compiled in 93ms
+[00:11:11.141] Server  LOG      ✓ Compiled in 116ms
+[00:11:16.411] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912866933} /_vercel/insights/view
+[00:11:17.364] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/education color: rgb(120, 120, 120) color: inherit {"dp":"/education","o":"http://localhost:3000/education","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912867877} /_vercel/insights/view
+[00:11:19.960] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912870487} /_vercel/insights/view
+[00:11:20.771] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/education color: rgb(120, 120, 120) color: inherit {"dp":"/education","o":"http://localhost:3000/education","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777912871299} /_vercel/insights/view
+[00:24:36.840] Server  LOG      ✓ Compiled in 94ms
+[00:24:42.977] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:43.139] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:24:43.139] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/education","route":"/education"}
+[00:24:43.139] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/education color: rgb(120, 120, 120) color: inherit {"dp":"/education","o":"http://localhost:3000/education","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777913673664} /_vercel/insights/view
+[00:28:30.708] Server  LOG      ✓ Compiled in 51ms
+[00:29:36.754] Server  LOG      ✓ Compiled in 46ms
+[00:30:35.871] Server  LOG      ✓ Compiled in 43ms
+[00:30:36.662] Browser ERROR   uncaughtError: ReferenceError: List is not defined
+[00:30:40.187] Server  LOG      ✓ Compiled in 64ms
+[00:30:40.662] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:30:40.662] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:30:51.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:30:51.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:03.242] Server  ERROR    ⨯ ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+
+
+[00:31:03.368] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:03.663] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:03.896] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:03.896] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:04.452] Browser ERROR   uncaughtError: Error: ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+
+
+[00:31:04.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:04.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:04.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:04.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:04.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:04.665] Browser ERROR   ./frontend/app/education/page.tsx:245:80
+Parsing ecmascript source code failed
+  243 |
+  244 |                     <Card className="p-4">
+> 245 |                       <p className="font-semibold mb-2">Student List</List></p>
+      |                                                                                ^
+> 246 |
+      | ^
+> 247 |                       {students.map(s => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+  248 |                         const present = markedPresent.includes(s.studentId)
+  249 |
+  250 |                         return (
+
+Expected '</', got 'jsx text (
+
+                      )'
+
+Import traces:
+  Client Component Browser:
+    ./frontend/app/education/page.tsx [Client Component Browser]
+    ./frontend/app/education/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./frontend/app/education/page.tsx [Client Component SSR]
+    ./frontend/app/education/page.tsx [Server Component]
+[00:31:13.787] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:31:13.814] Server  LOG      ✓ Compiled in 42ms
+[00:31:14.342] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:14.393] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:14.666] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:31:14.666] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/education","route":"/education"}
+[00:31:14.666] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/education color: rgb(120, 120, 120) color: inherit {"dp":"/education","o":"http://localhost:3000/education","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777914065190} /_vercel/insights/view
+[00:31:14.666] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:31:14.666] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/education","route":"/education"}
+[00:31:14.666] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/education color: rgb(120, 120, 120) color: inherit {"dp":"/education","o":"http://localhost:3000/education","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1777914065156} /_vercel/insights/view
+[00:31:20.973] Server  LOG      ✓ Compiled in 43ms
+[00:32:08.855] Server  LOG      ✓ Compiled in 54ms
+[00:32:12.225] Server  LOG      ✓ Compiled in 40ms
+[00:33:22.892] Server  LOG      ✓ Compiled in 48ms
+[00:54:58.657] Server  LOG      ✓ Compiled in 85ms

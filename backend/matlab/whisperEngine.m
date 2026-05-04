@@ -3,10 +3,10 @@ function decoded = whisperEngine(payload)
     % Ensure current folder is on MATLAB path
     addpath(fileparts(mfilename('fullpath')));
 
-    % 🔥 Encode message → frequencies
+    % Encode message → frequencies
     freqs = encodeMessage(payload);
 
-    % 🔥 Convert frequencies → binary
+    % Convert frequencies → binary
     binaryStr = '';
 
     for i = 1:length(freqs)
